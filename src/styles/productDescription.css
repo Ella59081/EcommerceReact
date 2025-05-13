@@ -1,0 +1,125 @@
+.desc-con{
+    width: 100%;
+    padding: 130px 100px 80px;
+}
+
+.holder{
+    width: 100%;
+}
+.box{
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    padding: 30px;
+    padding-bottom: 60px;
+}
+.pic{
+    width: 70%;
+    background-color: whitesmoke;
+}
+.product-pic {
+    width: 65%;
+    /* object-fit: contain; */
+    height: 510px;
+    border-radius: 10px;
+}
+.des{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    /* width: 50%; */
+}
+.des .des-title{
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+.des .description{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 17.5px;
+    line-height: 28px;
+}
+.des .price{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 500;
+    font-size: 25px;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+.des .brand, .size, .colors, .quantity{
+    padding-top: 10px;
+}
+.quantity{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.qty-con{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.qty{
+    display: flex;
+    align-items: center;
+}
+.qty button, .num{
+    height: 40px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+.qty button{
+    background-color: #ddd;
+}
+.qty .num{
+    background-color: whitesmoke;
+}
+.buttons-des{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px;
+    gap: 20px;
+}
+.buttons-des button{
+    padding: 15px;
+    
+    background-color: white;
+    border-radius: 30px;
+    border: none;
+    border: 1px solid black;
+    font-size: 15px;
+}
+.buttons-des button:hover{
+    background-color: black;
+    color: white;
+    transition: 0.5s ease;
+}
+.specs{
+    margin-top: 100px;
+    position: relative;
+}
+.mark{
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: fit-content;
+    border-bottom: none;
+    position: absolute;
+    top: -56.3px;
+    background-color: white;
+    box-shadow: 5px 0px 0px 0px #efefef;
+    font-size: 14px;
+    border-radius: 5px;
+    border-top-right-radius: 1px solid #ddd;
+    border-top-left-radius: 1px solid #ddd;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.body{
+    padding: 50px;
+    border: 1px solid #ddd;
+}

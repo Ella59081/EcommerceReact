@@ -1,0 +1,36 @@
+
+.foot{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 60px 100px 80px;
+    border-top: 1px solid #ddd;
+    gap: 20px;
+    justify-content: space-between;
+}
+.info-grid{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px;
+}
+.info-grid h2{
+    font-size: 16px;
+}
+.extra{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.extra a{
+    text-decoration: none;
+    color: black;
+}
+.text{
+    display: flex;
+    align-items: center;
+    padding: 25px 50px;
+    /* background-color: rgb(218, 218, 218); */
+}
+.text p{
+    font-size: 15px;
+}

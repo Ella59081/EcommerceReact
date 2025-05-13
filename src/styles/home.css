@@ -1,4 +1,249 @@
-h1{
-    font-size: 45px;
-    color: blue;
+.con{
+    width: 100%;
+}
+.first{
+    width: 100%;
+    height: 100vh;
+    padding-top: 100px;
+    background-image: url('/src/assets/images/home-new-bg-free-img.jpg');
+    background-position: center;
+    /* background-position: top; */
+    background-size: cover;
+    object-fit: contain;
+    background-color: rgba(3, 3, 77, 0.326);
+    background-blend-mode: darken;
+    display: flex;
+    align-items: center;
+    padding: 0px 150px;
+    background-attachment: fixed;
+}
+.info{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.info > h1{
+    font-size: 66px;
+    line-height: 92px;
+    font-weight: 600;
+}
+.info p{
+    font-size: 25px;
+    line-height: 34px;
+    font-weight: 600;
+    padding-top: 20px;
+}
+.account{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.con a{
+    color: black;
+    text-decoration: none;
+}
+.first a{
+    border: 1px solid black;
+    padding: 13px 15px;
+    border-radius: 10px;
+}
+.links{
+    display: flex;
+    gap: 10px;
+}
+.buttons-route{
+    display: flex;
+    gap: 30px;
+    padding-top: 35px;
+}
+.buttons-route a{
+    padding: 15px 30px;
+    border-radius: 0px;
+    border: 1px solid white;
+    font-size: 14.5px;
+}
+.white{
+    background-color: white;
+    border: none;
+    color: black;
+}
+.buttons .black{
+    color: white;
+}
+.white:hover{
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    transition: 0.4s ease;
+}
+.black:hover{
+    background-color: white;
+    color: black;
+    transition: 0.4s ease;
+}
+.categories-section{
+    padding: 80px 100px 50px;
+}
+.cat-grid{
+    display: flex;
+    gap: 30px;
+    padding-top: 50px;
+}
+.cat-item img{
+    height: 400px;
+    width: 100%;
+}
+.cat-item .shop{
+    padding: 20px 0px 0px;
+    text-decoration: none;
+    color: grey;
+    font-size: 14px;
+}
+.onsale-con{
+    padding: 50px 100px;
+    position: relative;
+    
+}
+.onsale{
+    padding: 130px 100px;
+    width: 100%;
+    background-repeat: no-repeat;
+    /* object-fit: contain; */
+    background-image: url('/src/assets/images/girl-back.avif');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: bottom;
+    background-position-x: 100px;
+    background-color: rgba(0, 0, 0, 0.508);
+    background-blend-mode: darken;
+}
+.sale{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.sale h3{
+    font-size: 28px;
+    font-weight: 100;
+}
+.sale h1{
+    font-size: 50px;
+}
+.sale .buy{
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: black;
+    color: white;
+    width: fit-content;
+}
+.products{
+    width: 100%;
+    padding: 80px 100px 60px;
+}
+.topic-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.topic-header a{
+    padding: 0px;
+    border: none;
+    color: black;
+    text-decoration: underline black;
+    font-size: 14px;
+}
+.topic{
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-family: sans-serif;
+}
+.grid-con{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding-top: 40px;
+    row-gap: 40px;
+}
+.grid-con a{
+    text-decoration: none;
+    color: black;
+}
+.grid-con a:hover{
+    text-decoration: underline black;
+    color: black;
+}
+.item{
+    /* height: 500px; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+    bottom: 0;                                                                                                                     
+}
+/* .item:hover{
+    box-shadow: 10px 20px 10px rgba(22, 22, 22, 0.303);
+    transition: 0.5s ease;
+    position: relative;
+    
+} */
+.item .namelink{
+    border: none;
+    padding: 0px;
+}
+.item .name{
+    padding-top: 20px;
+    font-size: 16px;
+    border: none;
+    padding: 0px;
+}
+.item img{
+    height: 300px;
+    width: 100%;
+    border-radius: 10px;
+    /* object-fit: contain; */
+}
+.item .price{
+    font-size: 20px;
+    font-weight: bold;
+}
+.item .rate{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.item .rate span{
+    display: flex;
+    gap: 5px;
+}
+.rate span svg{
+    fill: gold;
+}
+
+.item .buttons-add{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px;
+    gap: 20px;
+}
+.buttons-add button{
+    padding: 14px;
+    
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 15px;
+}
+.buttons-add button:hover{
+    
+    transition-timing-function: ease-out;
+    background: black;
+    color: white;
+    transition: 0.5s ease;
+    /* transform: perspective(1px) translateZ(0px);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; */
 }

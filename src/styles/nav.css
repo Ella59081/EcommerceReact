@@ -1,0 +1,76 @@
+.nav-container{
+    width: 100%;
+}
+nav{
+    width: 100%;
+    background-color: rgba(0, 0, 1, 0.077);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 70px;
+    position: fixed;
+    z-index: 30;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+}
+.first-nav{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.first-nav a{
+    font-family: sans-serif;
+    padding: 15px;
+}
+.first-nav > a:first-child{
+    font-family: fantasy;
+    font-size: 36px;
+}
+.categories a{
+    font-size: 14.5px;
+}
+.second{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.second a{
+    font-size: 14px;
+    padding: 10px;
+}
+.sign-in{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.sign-in img{
+    height: 20px;
+}
+.cart{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    position: relative;
+}
+
+.cart img{
+    height: 25px;
+}
+.count{
+    
+    height: 18px;
+    width: 18px;
+    background-color: white;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 10px;
+    position: absolute;
+    left: 23px;
+    bottom: 23px;
+}
+
