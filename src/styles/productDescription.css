@@ -9,25 +9,28 @@
 .box{
     width: 100%;
     display: flex;
-    gap: 50px;
+    gap: 60px;
     padding: 30px;
     padding-bottom: 60px;
+    /* justify-content: space-between; */
 }
-.pic{
-    width: 70%;
-    background-color: whitesmoke;
-}
+/* .pic{
+    width: 60%;
+    background-color: red;
+
+} */
 .product-pic {
-    width: 65%;
-    /* object-fit: contain; */
+    width: 50%;
+    object-fit: fill;
     height: 510px;
     border-radius: 10px;
+
 }
 .des{
     display: flex;
     flex-direction: column;
-    width: 35%;
-    /* width: 50%; */
+    width: 40%;
+    
 }
 .des .des-title{
     font-size: 18px;

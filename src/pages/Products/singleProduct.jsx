@@ -3,6 +3,7 @@ import apiClient from '../../services/apiClient';
 import { useState, useEffect } from 'react';
 import { useParams} from 'react-router-dom';
 
+
 function ProductDetails(){
 
     const {id} = useParams();
@@ -77,14 +78,6 @@ function ProductDetails(){
                     </div>
                </div>
                </div>
-               <div className="specs">
-                    <div className="mark">
-                      <p>About this item</p>
-                    </div>
-                    <div className="body">
-                       
-                    </div>
-                  </div>
             </div>
             : ""
             }

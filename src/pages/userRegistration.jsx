@@ -4,7 +4,8 @@ import { useState } from "react";
 import { registerUser } from "../services/userService";
 import { userSchema } from "../validations/userSchema";
 import toast from "react-hot-toast";
-import InputField from "../components/inputField";
+
+import InputField from "../components/InputField";
 import { useNavigate } from "react-router-dom";
 import '../styles/register.css'
 const UserRegistrationForm = () => {
@@ -79,6 +80,7 @@ const UserRegistrationForm = () => {
           label="Password"
           type="password"
           error={errors.password?.message}
+          
         />
         <button
           type="submit"

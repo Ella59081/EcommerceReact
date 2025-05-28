@@ -18,6 +18,9 @@ import AdminDashboard from './pages/Admin/adminDashboard.jsx'
 import UserDashboard from './pages/userDashboard.jsx'
 import Footer from './components/footer.jsx'
 import ProductDetails from './pages/Products/singleProduct.jsx'
+import GetCategory from './pages/Products/categories.jsx'
+import SingleCategory from './pages/Products/singleCategory.jsx'
+import AllProducts from './pages/Products/productsPage'
 
 
 function App() {
@@ -40,6 +43,10 @@ function App() {
         <Route path="/register" element={<UserRegistrationForm/>}/>
         <Route path="/login" element={<Login />}/>
         <Route path="/products/:id" element={<ProductDetails />}/>
+        {/* <Route path="/categories/:id" element={<GetCategory />}/> */}
+        <Route path="/categories/:Category" element={<SingleCategory />}/>
+        <Route path="/products" element={< AllProducts />}/>
+
         <Route
             path="/profile"
             element={

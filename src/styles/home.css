@@ -110,19 +110,21 @@
     padding: 130px 100px;
     width: 100%;
     background-repeat: no-repeat;
-    /* object-fit: contain; */
-    background-image: url('/src/assets/images/girl-back.avif');
+    
+    background-image: url('/src//assets/images/shoes-back.webp');
     background-attachment: fixed;
     background-size: cover;
-    background-position: bottom;
-    background-position-x: 100px;
-    background-color: rgba(0, 0, 0, 0.508);
-    background-blend-mode: darken;
+    object-fit: contain;
+    background-position: center;
+    /* background-position-x: 100px; */
+    /* background-color: transparent;
+    background-blend-mode: darken; */
 }
 .sale{
     display: flex;
     flex-direction: column;
     color: white;
+    position: relative;
 }
 .sale h3{
     font-size: 28px;
@@ -137,10 +139,15 @@
     background-color: black;
     color: white;
     width: fit-content;
+    position: relative;
 }
 .products{
     width: 100%;
     padding: 80px 100px 60px;
+}
+.allProducts{
+    width: 100%;
+    padding: 150px 100px 60px;
 }
 .topic-header{
     display: flex;
@@ -195,13 +202,27 @@
     border: none;
     padding: 0px;
 }
+.like{
+    background: transparent;
+    border: none;
+}
+.like{
+    /* height: px;
+    width: 25px; */
+    position: absolute;
+    top: 3%;
+    left: 86%;
+}
+.liking {
+    height: 25px;
+}
 .item .name{
     padding-top: 20px;
     font-size: 16px;
     border: none;
     padding: 0px;
 }
-.item img{
+.item .prodImg{
     height: 300px;
     width: 100%;
     border-radius: 10px;

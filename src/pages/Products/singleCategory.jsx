@@ -1,22 +1,14 @@
-import {Link} from "react-router-dom"
+import {Link, useParams} from "react-router-dom"
 import '../../styles/home.css'
 import apiClient from "../../services/apiClient"
 import { useState, useEffect } from "react";
-function Homepage(){
+function SingleCategory(){
 
 
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
-    const [isliked, setIsLiked] = useState(
-      false
-      // '/src/assets/images/heart-solid (7).svg'
-
-    )
-
-    const likeProduct = () =>{
-      setIsLiked(true)
-    }
+    const {Category} = useParams();
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -33,7 +25,8 @@ function Homepage(){
             // Set loading to false after fetching
             setLoading(false);
             
-            console.log("ready")
+            console.log('ready')
+            console.log(Category)
 
           }
         };
@@ -41,58 +34,16 @@ function Homepage(){
         fetchProducts();
       }, []);
     //   let productList = products.products || []
-
+    const category = products.category
+    const menCategory = (category) =>{
+        return category == 'men'
+    }
 
     return(
         <>
         <div className="con">
-            <div className="first">
-                <div className="info">
-                   <h1>Welcome to Shopify</h1>
-                   <p>For your everyday shopping</p>
-                   <div className="buttons-route">
-                        <Link className="white" to="/register">SHOP NOW</Link>
-                        <Link className="black" to="/register">REGISTER</Link>
-                    </div>
-                </div>
-            </div>
-            <div className="categories-section">
-                <h1 className="topic">EXPLORE CATEGORIES</h1>
-                <div className="cat-grid">
-                  <div className="cat-item">
-                    <a href="">
-                      <img src='/src/assets/images/men.jpg' alt="" />
-                    </a>
-                    <a className="shop" href="">SHOP FOR MEN</a>
-                  </div>
-                  <div className="cat-item">
-                    <a href="">
-                      <img src="/src/assets/images/women.jpg" alt="" />
-                    </a>
-                    <a className="shop" href="">SHOP FOR WOMEN</a>
-                  </div>
-                  <div className="cat-item">
-                    <a href="">
-                      <img src="/src/assets/images/swimmers.avif" alt="" />
-                    </a>
-                    <a className="shop" href="">SHOP FOR SWIMMERS</a>
-                  </div>
-                </div>
-            </div>
-            <div className="onsale-con">
-              <div className="onsale">
-                <div className="sale">
-                  <h3>Different shoes</h3>
-                  <h1>Just for you</h1>
-                  <a href="" className="buy">Shop now</a>
-                </div>
-              </div>
-            </div>
-            <div className="products">
-            <div className="topic-header">
-               <h1 className="topic">Featured products</h1>
-               <a href="">VIEW ALL PRODUCTS</a>
-            </div>
+            <div className="allProducts">
+            <h1>Category : {Category}</h1>
 
                 {loading && <p>Loading products...</p>}
 
@@ -100,21 +51,11 @@ function Homepage(){
             <div className="grid-con">
             {
                  
-                products.slice(4, 12).map((product) =>(
+                products.filter(product => product.category == [Category] ).map((product) =>(
                             <div key={product.id}>
                                 <div className="item">
-                                      {/* <button onClick={likeProduct} className="like">
-                                        {
-                                          isliked ?
-                                            <img className='liking' src="/src/assets/images/heart-solid (7).svg" alt="" />
-                                           : <img className='liking' src="/src/assets/images/heart-solid (7).svg" alt="" />
-                                           
-                                        }
-                                      </button> */}
-                                    <Link to={`/products/${product.id}`}
-                                      
+                                    <Link to={`/products/${product.id}`} 
                                       className="namelink" href="">
-                                        
                                       <img className="prodImg" src={product.images} alt="" />
                                     </Link>
                                     <Link to={`/products/${product.id}`} className='name'>{
@@ -148,4 +89,4 @@ function Homepage(){
     )
 }
 
-export default Homepage
+export default SingleCategory

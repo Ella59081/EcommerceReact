@@ -2,7 +2,7 @@ import {Link} from "react-router-dom"
 import '../../styles/home.css'
 import apiClient from "../../services/apiClient"
 import { useState, useEffect } from "react";
-function Homepage(){
+function AllProducts(){
 
 
     const [products, setProducts] = useState([]);
@@ -36,17 +36,7 @@ function Homepage(){
     return(
         <>
         <div className="con">
-            <div className="first">
-                <div className="info">
-                   <h1>Welcome to Shopify</h1>
-                   <p>For your everyday shopping</p>
-                   <div className="buttons-route">
-                        <Link className="white" to="/register">SHOP NOW</Link>
-                        <Link className="black" to="/register">REGISTER</Link>
-                    </div>
-                </div>
-            </div>
-            <div className="products">
+            <div className="allProducts">
             <h1>All products</h1>
 
                 {loading && <p>Loading products...</p>}
@@ -54,33 +44,37 @@ function Homepage(){
                 {error && <p style={{ color: "red" }}>{error}</p>}
             <div className="grid-con">
             {
-                // console.log(products.products)
+                 
+                products.map((product) =>(
+                            <div key={product.id}>
+                                <div className="item">
+                                    <Link to={`/products/${product.id}`} 
+                                      className="namelink" href="">
+                                      <img className="prodImg" src={product.images} alt="" />
+                                    </Link>
+                                    <Link to={`/products/${product.id}`} className='name'>{
+                                        product.name
+                                    }</Link>
+                                    <p className='price'>{"$" + product.price}</p>
+                                    <p>{product.brand}</p>
+                                    {/* <p className='rate'>{product.totalReviews + " " + "/" + " " + "5"}
+                                      <span>
+                                        <svg height="13" version="1.1" viewBox="0 0 13 13" width="13" aria-label="star"  ><g transform="translate(-90.000000, -3261.000000)"><polygon id="Star-Copy-17" points="97 3271.77933 92.6737621 3274 93.5 3269.29656 90 3265.96556 94.836881 3265.27933 97 3261 99.163119 3265.27933 104 3265.96556 100.5 3269.29656 101.326238 3274"></polygon></g></svg>
+                                        <svg height="13" version="1.1" viewBox="0 0 13 13" width="13" aria-label="star" ><g  transform="translate(-90.000000, -3261.000000)"><polygon id="Star-Copy-17" points="97 3271.77933 92.6737621 3274 93.5 3269.29656 90 3265.96556 94.836881 3265.27933 97 3261 99.163119 3265.27933 104 3265.96556 100.5 3269.29656 101.326238 3274"></polygon></g></svg>
+                                        <svg height="13" version="1.1" viewBox="0 0 13 13" width="13" aria-label="star"><g  transform="translate(-90.000000, -3261.000000)"><polygon id="Star-Copy-17" points="97 3271.77933 92.6737621 3274 93.5 3269.29656 90 3265.96556 94.836881 3265.27933 97 3261 99.163119 3265.27933 104 3265.96556 100.5 3269.29656 101.326238 3274"></polygon></g></svg>
+                                        <svg height="13" version="1.1" viewBox="0 0 13 13" width="13" aria-label="star" ><g transform="translate(-90.000000, -3261.000000)"><polygon id="Star-Copy-17" points="97 3271.77933 92.6737621 3274 93.5 3269.29656 90 3265.96556 94.836881 3265.27933 97 3261 99.163119 3265.27933 104 3265.96556 100.5 3269.29656 101.326238 3274"></polygon></g></svg>
+                                        <svg height="13" version="1.1" viewBox="0 0 13 13" width="13" aria-label="star"><g  transform="translate(-90.000000, -3261.000000)"><polygon id="Star-Copy-17" points="97 3271.77933 92.6737621 3274 93.5 3269.29656 90 3265.96556 94.836881 3265.27933 97 3261 99.163119 3265.27933 104 3265.96556 100.5 3269.29656 101.326238 3274"></polygon></g></svg>
+                                      </span>
+                                    </p> */}
+                                    <div className="buttons-add">
+                                       {/* <button>Buy now</button> */}
+                                       <button>Add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            ))
                 
-            products.map((product) =>(
-            <div key={product.id}>
-                <div className="item">
-                    <img src={product.images} alt="" />
-                    <Link to={`/products`} href='' className='name'>{
-                        product.name
-                    }</Link>
-                    <p>{"$" + product.price}</p>
-                    <p>{product.category}</p>
-                    <p className='rate'>{product.totalReviews + " " + "/" + " " + "5"}
-                      <span>
-                        <svg height="13" version="1.1" viewBox="0 0 13 13" width="13" aria-label="star"  ><g transform="translate(-90.000000, -3261.000000)"><polygon id="Star-Copy-17" points="97 3271.77933 92.6737621 3274 93.5 3269.29656 90 3265.96556 94.836881 3265.27933 97 3261 99.163119 3265.27933 104 3265.96556 100.5 3269.29656 101.326238 3274"></polygon></g></svg>
-                        <svg height="13" version="1.1" viewBox="0 0 13 13" width="13" aria-label="star" ><g  transform="translate(-90.000000, -3261.000000)"><polygon id="Star-Copy-17" points="97 3271.77933 92.6737621 3274 93.5 3269.29656 90 3265.96556 94.836881 3265.27933 97 3261 99.163119 3265.27933 104 3265.96556 100.5 3269.29656 101.326238 3274"></polygon></g></svg>
-                        <svg height="13" version="1.1" viewBox="0 0 13 13" width="13" aria-label="star"><g  transform="translate(-90.000000, -3261.000000)"><polygon id="Star-Copy-17" points="97 3271.77933 92.6737621 3274 93.5 3269.29656 90 3265.96556 94.836881 3265.27933 97 3261 99.163119 3265.27933 104 3265.96556 100.5 3269.29656 101.326238 3274"></polygon></g></svg>
-                        <svg height="13" version="1.1" viewBox="0 0 13 13" width="13" aria-label="star" ><g transform="translate(-90.000000, -3261.000000)"><polygon id="Star-Copy-17" points="97 3271.77933 92.6737621 3274 93.5 3269.29656 90 3265.96556 94.836881 3265.27933 97 3261 99.163119 3265.27933 104 3265.96556 100.5 3269.29656 101.326238 3274"></polygon></g></svg>
-                        <svg height="13" version="1.1" viewBox="0 0 13 13" width="13" aria-label="star"><g  transform="translate(-90.000000, -3261.000000)"><polygon id="Star-Copy-17" points="97 3271.77933 92.6737621 3274 93.5 3269.29656 90 3265.96556 94.836881 3265.27933 97 3261 99.163119 3265.27933 104 3265.96556 100.5 3269.29656 101.326238 3274"></polygon></g></svg>
-                      </span>
-                    </p>
-                    <div className="buttons">
-                       <button>Buy now</button>
-                       <button>Add to cart</button>
-                    </div>
-                </div>
-            </div>
-            ))
+               
            }
             </div>
             </div>
@@ -89,4 +83,4 @@ function Homepage(){
     )
 }
 
-export default Homepage
+export default AllProducts

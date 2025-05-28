@@ -3,9 +3,10 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     padding: 60px 100px 80px;
-    border-top: 1px solid #ddd;
+    /* border-top: 1px solid #ddd; */
     gap: 20px;
     justify-content: space-between;
+    background-color: whitesmoke;
 }
 .info-grid{
     display: flex;
@@ -29,7 +30,7 @@
     display: flex;
     align-items: center;
     padding: 25px 50px;
-    /* background-color: rgb(218, 218, 218); */
+    background-color: whitesmoke;
 }
 .text p{
     font-size: 15px;

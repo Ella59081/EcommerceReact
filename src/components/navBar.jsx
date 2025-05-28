@@ -8,10 +8,13 @@ function NavBar(){
                 <div className='first-nav'>
                    <Link to="/" className="logo" href="">SHOPIFY</Link>
                    <div className="categories">
-                       <a href="">ALL CATEGORIES</a>
-                       <a href="">MEN</a>
-                       <a href="">WOMEN</a>
-                       <a href="">SWIMMERS</a>
+                       <Link to='/products'>ALL CATEGORIES</Link>
+                       <Link to='/categories/65adf345a3792eb655ef6b84'>hello</Link>
+                       {/* <a href="">MEN</a> */}
+                       <Link to='/categories/men'>MEN</Link>
+                       <Link to='/categories/women'>WOMEN</Link>
+                       
+                       
                    </div>
                 </div>
                 <div className="second">
