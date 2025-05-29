@@ -21,13 +21,15 @@ import ProductDetails from './pages/Products/singleProduct.jsx'
 import GetCategory from './pages/Products/categories.jsx'
 import SingleCategory from './pages/Products/singleCategory.jsx'
 import AllProducts from './pages/Products/productsPage'
-
+import CartPage from './pages/CartPage.jsx'
+import {CartProvider} from './contexts/CartContext'
 
 function App() {
 
   return (
       <>
       <AuthProvider>
+      <CartProvider>
       <Toaster position="top-right"/>
       {/* <FirstPage name = "Eleanor" age = {45}/> */}
       {/* <Information/> */}
@@ -46,6 +48,7 @@ function App() {
         {/* <Route path="/categories/:id" element={<GetCategory />}/> */}
         <Route path="/categories/:Category" element={<SingleCategory />}/>
         <Route path="/products" element={< AllProducts />}/>
+        <Route path="/cart" element={< CartPage />}/>
 
         <Route
             path="/profile"
@@ -66,6 +69,7 @@ function App() {
 
       </Routes>
       <Footer/>
+      </CartProvider>
       </AuthProvider>
     </>
   )

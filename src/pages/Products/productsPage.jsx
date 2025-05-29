@@ -2,12 +2,14 @@ import {Link} from "react-router-dom"
 import '../../styles/home.css'
 import apiClient from "../../services/apiClient"
 import { useState, useEffect } from "react";
+import { useCart } from "../../contexts/CartContext";
 function AllProducts(){
 
 
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
+    const {addToCart} = useCart();
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -68,7 +70,7 @@ function AllProducts(){
                                     </p> */}
                                     <div className="buttons-add">
                                        {/* <button>Buy now</button> */}
-                                       <button>Add to cart</button>
+                                       <button onClick={() => addToCart(product)}>Add to cart</button>
                                     </div>
                                 </div>
                             </div>

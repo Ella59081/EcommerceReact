@@ -2,6 +2,7 @@ import '../../styles/productDescription.css'
 import apiClient from '../../services/apiClient';
 import { useState, useEffect } from 'react';
 import { useParams} from 'react-router-dom';
+import { useCart } from '../../contexts/CartContext';
 
 
 function ProductDetails(){
@@ -10,6 +11,7 @@ function ProductDetails(){
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
+    const {addToCart} = useCart();
 
     useEffect(() => {
             const fetchProducts = async () => {
@@ -73,7 +75,7 @@ function ProductDetails(){
                     </div>
                     <div className="buttons-des">
                       <button>Buy now</button>
-                      <button>Add to cart</button>
+                      <button onClick={() => addToCart(products)}>Add to cart</button>
                       <button>Add to wishlist</button>
                     </div>
                </div>

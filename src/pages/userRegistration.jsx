@@ -61,7 +61,7 @@ const UserRegistrationForm = () => {
   return (
     <div className="contain">
       <form onSubmit={handleSubmit(onSubmit)} className="registration-form">
-        <h2 className="">Register</h2>
+        <h2 className="">Sign up</h2>
         <InputField
           name="fullName"
           control={control}

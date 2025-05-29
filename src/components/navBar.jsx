@@ -1,6 +1,11 @@
 import '../styles/nav.css'
 import { Link } from 'react-router-dom'
+import { useCart } from '../contexts/CartContext'
+
 function NavBar(){
+
+    const {cartNumber} = useCart();
+
     return (
         <>
         <div className="nav-container">
@@ -9,7 +14,6 @@ function NavBar(){
                    <Link to="/" className="logo" href="">SHOPIFY</Link>
                    <div className="categories">
                        <Link to='/products'>ALL CATEGORIES</Link>
-                       <Link to='/categories/65adf345a3792eb655ef6b84'>hello</Link>
                        {/* <a href="">MEN</a> */}
                        <Link to='/categories/men'>MEN</Link>
                        <Link to='/categories/women'>WOMEN</Link>
@@ -23,11 +27,11 @@ function NavBar(){
                        <img src="/src/assets/images/account.svg" alt="" />
                        <span>Sign in</span>
                    </Link>
-                   <a href="" className='cart'>
+                   <Link to='/cart' className='cart'>
                        <img src="/src/assets/images/cart.svg" alt="" />
                        <span>My cart</span>
-                       <div className="count">0</div>
-                   </a>
+                       <div className="count">{cartNumber}</div>
+                   </Link>
                 </div>
 
             </nav>

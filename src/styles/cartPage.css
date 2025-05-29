@@ -1,0 +1,123 @@
+.cart-con{
+    
+    width: 100%;
+}
+.emptyCart{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.emptyCart > div {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+.emptyCart > div .side-links{
+    display: flex;
+    gap: 30px;
+}
+.emptyCart > div img{
+    height: 100px;
+}
+.side-links a{
+    text-decoration: none;
+    color: white;    
+    padding: 15px 70px;
+    background-color: black;
+    border-radius: 30px;
+}
+.side-links .whiteBtn{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+.shoppingCart{
+    display: flex;
+    padding: 100px;
+    flex-direction: column;
+    gap: 30px;
+    padding: 150px 100px 60px;
+}
+.Cart{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.cartItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 20px;
+}
+.product-name{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    width: 40%;
+    
+}
+.cartItem .prod-img img{
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+}
+.desc{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.quantity{
+    display: flex;
+    gap: 0px;
+}
+.quantity button{
+    height: 40px;
+    width: 30px;
+    font-size: 20px;
+    border: none;
+}
+.quantity .qnt{
+    background-color: whitesmoke;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.delete{
+    background-color: white;
+    border: none;
+}
+.delete img{
+    height: 20px;
+}
+.proceed{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.total{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.173);
+    padding: 20px;
+    border-radius: 10px;
+}
+.total p{
+    display: flex;
+    align-items: center;
+    gap: 300px;
+}
+.checkOut{
+    padding: 20px 60px;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(30, 30, 222, 0.825);
+    border-radius: 5px;
+}

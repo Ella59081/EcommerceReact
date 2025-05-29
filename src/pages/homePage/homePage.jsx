@@ -2,6 +2,7 @@ import {Link} from "react-router-dom"
 import '../../styles/home.css'
 import apiClient from "../../services/apiClient"
 import { useState, useEffect } from "react";
+import { useCart } from '../../contexts/CartContext'
 function Homepage(){
 
 
@@ -17,6 +18,8 @@ function Homepage(){
     const likeProduct = () =>{
       setIsLiked(true)
     }
+
+    const {addToCart} = useCart();
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -91,7 +94,7 @@ function Homepage(){
             <div className="products">
             <div className="topic-header">
                <h1 className="topic">Featured products</h1>
-               <a href="">VIEW ALL PRODUCTS</a>
+               <Link to="/products">VIEW ALL PRODUCTS</Link>
             </div>
 
                 {loading && <p>Loading products...</p>}
@@ -101,7 +104,7 @@ function Homepage(){
             {
                  
                 products.slice(4, 12).map((product) =>(
-                            <div key={product.id}>
+                            <div  key={product.id}>
                                 <div className="item">
                                       {/* <button onClick={likeProduct} className="like">
                                         {
@@ -133,7 +136,11 @@ function Homepage(){
                                     </p> */}
                                     <div className="buttons-add">
                                        {/* <button>Buy now</button> */}
-                                       <button>Add to cart</button>
+                                       <button 
+                                       onClick={ () => addToCart(product)}
+                                       >
+                                        Add to cart
+                                       </button>
                                     </div>
                                 </div>
                             </div>
