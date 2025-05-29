@@ -32,10 +32,9 @@ function Footer(){
                         <a href="">Login</a>
                         <a href="">Sign-up</a>
                         <a href="">Checkout</a>
-                        <a href="">Bulk purchase</a>
                         <a href="">My account</a>
                         <a href="">My Cart</a>
-                        <a href="">Track your order</a>
+                        
                     </div>
                 </div>
                 <div className="info-grid">

@@ -19,7 +19,7 @@ function Homepage(){
       setIsLiked(true)
     }
 
-    const {addToCart} = useCart();
+    const {addToCart, cart} = useCart();
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -97,9 +97,7 @@ function Homepage(){
                <Link to="/products">VIEW ALL PRODUCTS</Link>
             </div>
 
-                {loading && <p>Loading products...</p>}
-
-                {error && <p style={{ color: "red" }}>{error}</p>}
+            { !loading && !error ?
             <div className="grid-con">
             {
                  
@@ -136,7 +134,7 @@ function Homepage(){
                                     </p> */}
                                     <div className="buttons-add">
                                        {/* <button>Buy now</button> */}
-                                       <button 
+                                       <button
                                        onClick={ () => addToCart(product)}
                                        >
                                         Add to cart
@@ -148,7 +146,20 @@ function Homepage(){
                 
                
            }
+            </div> :
+            <div className>
+              {loading && 
+                <section class="dots-container">
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </section>
+              }
+              {error && <p style={{ color: "red" }}>{error}</p>}
             </div>
+            }
             </div>
         </div>
         </>

@@ -37,12 +37,11 @@ function ProductDetails(){
           }, [id]);
 
     return(
-        <div className='desc-con'>
-            {loading && <p>Loading product...</p>}
-    
-            {error && <p style={{ color: "red" }}>{error}</p>}
-            {
+      <>
+          {
                 !loading && !error ?
+            <div className='desc-con'>
+            
                <div className="holder">
                <div className="box" key={products.id}>
                 <img className="product-pic" src={products.images} alt="" />
@@ -81,9 +80,22 @@ function ProductDetails(){
                </div>
                </div>
             </div>
-            : ""
-            }
-        </div>
+            
+            </div> :
+            <div className="preload">
+              {loading && 
+                <section class="dots-container">
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </section>
+              }
+              {error && <p style={{ color: "red" }}>{error}</p>}
+            </div>
+          }
+      </>
     )
 }
 export default ProductDetails;

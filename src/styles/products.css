@@ -1,0 +1,186 @@
+/* .con{
+    height: 100vh;
+} */
+.preload{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.allProducts{
+    width: 100%;
+    padding: 150px 100px 60px;
+}
+.topic-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.topic-header a{
+    padding: 0px;
+    border: none;
+    color: black;
+    text-decoration: underline black;
+    font-size: 14px;
+}
+.topic{
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-family: sans-serif;
+}
+.grid-con{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding-top: 40px;
+    row-gap: 40px;
+}
+.grid-con a{
+    text-decoration: none;
+    color: black;
+}
+.grid-con a:hover{
+    text-decoration: underline black;
+    color: black;
+}
+.item{
+    /* height: 500px; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+    bottom: 0;                                                                                                                     
+}
+/* .item:hover{
+    box-shadow: 10px 20px 10px rgba(22, 22, 22, 0.303);
+    transition: 0.5s ease;
+    position: relative;
+    
+} */
+.item .namelink{
+    border: none;
+    padding: 0px;
+}
+.like{
+    background: transparent;
+    border: none;
+}
+.like{
+    /* height: px;
+    width: 25px; */
+    position: absolute;
+    top: 3%;
+    left: 86%;
+}
+.liking {
+    height: 25px;
+}
+.item .name{
+    padding-top: 20px;
+    font-size: 16px;
+    border: none;
+    padding: 0px;
+}
+.item .prodImg{
+    height: 300px;
+    width: 100%;
+    border-radius: 10px;
+    /* object-fit: contain; */
+}
+.item .price{
+    font-size: 20px;
+    font-weight: bold;
+}
+.item .rate{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.item .rate span{
+    display: flex;
+    gap: 5px;
+}
+.rate span svg{
+    fill: gold;
+}
+
+.item .buttons-add{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px;
+    gap: 20px;
+}
+.buttons-add button{
+    padding: 14px;
+    
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 15px;
+}
+.buttons-add button:hover{
+    
+    transition-timing-function: ease-out;
+    background: black;
+    color: white;
+    transition: 0.5s ease;
+    /* transform: perspective(1px) translateZ(0px);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; */
+}
+/* From Uiverse.io by adamgiebl */ 
+.dots-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.dot {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #b3d4fc;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.dot:last-child {
+  margin-right: 0;
+}
+
+.dot:nth-child(1) {
+  animation-delay: -0.3s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: -0.1s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.1s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    background-color: #b3d4fc;
+    box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+  }
+
+  50% {
+    transform: scale(1.2);
+    background-color: #6793fb;
+    box-shadow: 0 0 0 10px rgba(178, 212, 252, 0);
+  }
+
+  100% {
+    transform: scale(0.8);
+    background-color: #b3d4fc;
+    box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+  }
+}

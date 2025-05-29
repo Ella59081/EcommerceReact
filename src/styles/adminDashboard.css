@@ -17,6 +17,9 @@
     font-size: 20px;
     padding: 12px 50px;
 }
+/* .side{
+    background-color: rgba(30, 30, 222, 0.825);
+} */
 .side a{
     text-decoration: none;
     color: black;
@@ -34,7 +37,7 @@
 }
 .side button{
     padding: 15px 20px;
-    background-color: whitesmoke;
+    background-color: rgba(132, 132, 251, 0.825);
     border-radius: 5px;
     font-family: inherit;
     color: black;
@@ -42,7 +45,7 @@
     height: fit-content;
     border: none;
     width: fit-content;
-    margin-top: 250px;
+    margin-top: 100%;
     margin-left: 20px;
     display: flex;
     gap: 8px;
@@ -59,13 +62,14 @@
 .side a:hover{
     /* background-color: blue; */
     transition: 0.7s ease;
-    background-color: #0117d812;
+    background-color: rgba(132, 132, 251, 0.825);
     border: none;
 }
 .stats{
     background-color: white;
     width: 85%;
     padding: 25px;
+    height: 80.5%;
 }
 .title{
     display: flex;
@@ -105,7 +109,7 @@
 }
 .layout{
     width: 100%;
-    height: 80.5%;
+    /* height: 80.5%; */
     /* background-color: rgba(128, 128, 128, 0.162); */
     display: grid;
     grid-template-columns: repeat(4, 1fr);

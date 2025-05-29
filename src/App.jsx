@@ -15,7 +15,7 @@ import DashboardPage from './pages/DashboardPage.jsx'
 import NavBar from './components/navBar.jsx'
 import ProfilePage from './pages/profile.jsx'
 import AdminDashboard from './pages/Admin/adminDashboard.jsx'
-import UserDashboard from './pages/userDashboard.jsx'
+import UserDashboard from './pages/UserStats/userDashboard.jsx'
 import Footer from './components/footer.jsx'
 import ProductDetails from './pages/Products/singleProduct.jsx'
 import GetCategory from './pages/Products/categories.jsx'
@@ -23,6 +23,7 @@ import SingleCategory from './pages/Products/singleCategory.jsx'
 import AllProducts from './pages/Products/productsPage'
 import CartPage from './pages/CartPage.jsx'
 import {CartProvider} from './contexts/CartContext'
+import UserCart from './pages/UserStats/userCart.jsx'
 
 function App() {
 
@@ -62,10 +63,11 @@ function App() {
             path="/userdashboard"
             element={
               <ProtectedRoute>
-                <AdminDashboard />
+                <UserDashboard />
               </ProtectedRoute>
-            }
-          />
+            }>
+             <Route path='/userdashboard/userCart' element={<UserCart/>}/>
+          </Route>
 
       </Routes>
       <Footer/>

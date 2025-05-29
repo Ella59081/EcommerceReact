@@ -4,7 +4,7 @@ import { useCart } from '../contexts/CartContext'
 
 function CartPage(){
 
-    const {cartNumber, cart, deleteCartItem, sum} = useCart()
+    const {cartNumber, cart, deleteCartItem, total} = useCart()
 
     return(
         <div className='cart-con'>
@@ -15,7 +15,7 @@ function CartPage(){
                     <div className='Cart'>
                         
                         {
-                            cart.map((product, index) =>(
+                            cart.map(({product, quantity}) =>(
                                 <div className='cartItem' key={product.id}>
                                     <div className="product-name">
                                         <Link to={`/products/${product.id}`} className='prod-img'>
@@ -29,11 +29,11 @@ function CartPage(){
                                     <div className="size">Size: {product.sizes}</div>
                                     <div className="quantity">
                                         <button>-</button>
-                                        <div className='qnt'>1</div>
+                                        <div className='qnt'>{quantity}</div>
                                         <button>+</button>
                                     </div>
                                     <div className="price">${product.price}</div>
-                                    <button onClick={() => deleteCartItem(product.id)} className="delete" >
+                                    <button onClick={() => deleteCartItem(product.id)}  className="delete" >
                                         <img src="/src/assets/images/xmark-solid.svg" alt="" />
                                     </button>
                                     
@@ -44,7 +44,7 @@ function CartPage(){
                     </div>
                     <div className="proceed">
                         <div  className="total">
-                          <p>Your total <span>${sum}</span></p>
+                          <p>Your total <span>${total}</span></p>
                           <p><span>Discount</span> <span>$0.00</span></p>
                         </div>
                         <a on href="" className="checkOut">Proceed to Checkout</a>

@@ -7,29 +7,59 @@ export const CartProvider = ({children}) =>{
     const [cart, setCart] = useState([])
 
     const addToCart = (product) =>{
-        setCart((prev) =>[
-            ...prev, product
+        // setCart((prev) =>[
+        //     ...prev, {product, quantity: 1}
 
             
-        ])
-        setCartNumber((prev) => prev + 1)
+        // ])
+        // setCartNumber((prev) => prev + 1)
+        // console.log(cart)
+
+        setCart((prev) =>{
+
+        //    if(prev[0].quantity >= prev[0].product.qtyLeft){ 
+        //         console.log(prev)
+            
+            const alreadyExists = prev.find(item => item.product.id
+                === product.id
+            );
+            if(alreadyExists){
+                return prev.map(item => item.product.id === 
+                    product.id ? {...item, quantity : item.quantity+ 1}
+                    : item
+                )
+            }else{
+                setCartNumber((prev) => prev + 1)
+                return [...prev, {product: product, quantity: 1}]
+                
+            }
+        //   }
+        //   else{
+        //     return
+        //   }
+        })
+
+        // const addq = () =>{
+        //     setCart((prev) =>{
+        //         return[...prev, {product, quantity}]
+        //     })
+        // } 
         console.log(cart)
+        
     }
 
-    const deleteCartItem = (id) =>{
+    const deleteCartItem = (idt) =>{
         // cart.filter((_,i) => i !== index)
-        setCart((prev) => prev.filter((item) => item.id !== id))
+        setCart((prev) => prev.filter(({product}) => product.id !== idt))
         setCartNumber((prev) => prev - 1)
     }
 
-    let sum = 0
-    let i = cart.index
-    for(i = 0; i < cart.length; i++){
-        sum += cart[i].price
-    }
+    const total = cart.reduce((sum, item) =>
+        sum + item.product.price * item.quantity, 0
+    )
 
     return(
-        <CartContext.Provider value ={{cartNumber, cart, addToCart, deleteCartItem, sum}}>
+        <CartContext.Provider value ={{cartNumber, cart, addToCart, deleteCartItem, total}}>
             {children}
         </CartContext.Provider>
     )

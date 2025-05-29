@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom"
-import '../../styles/home.css'
+import '../../styles/products.css'
 import apiClient from "../../services/apiClient"
 import { useState, useEffect } from "react";
 import { useCart } from "../../contexts/CartContext";
@@ -37,15 +37,15 @@ function AllProducts(){
 
     return(
         <>
-        <div className="con">
+        {!loading && !error ?
+            <div className="con">
             <div className="allProducts">
             <h1>All products</h1>
-
-                {loading && <p>Loading products...</p>}
-
-                {error && <p style={{ color: "red" }}>{error}</p>}
+                
             <div className="grid-con">
+              
             {
+              
                  
                 products.map((product) =>(
                             <div key={product.id}>
@@ -70,7 +70,7 @@ function AllProducts(){
                                     </p> */}
                                     <div className="buttons-add">
                                        {/* <button>Buy now</button> */}
-                                       <button onClick={() => addToCart(product)}>Add to cart</button>
+                                       <button  onClick={() => addToCart(product)}>Add to cart</button>
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +80,21 @@ function AllProducts(){
            }
             </div>
             </div>
-        </div>
+            </div>
+             :
+           <div className="preload">
+              {loading && 
+                <section class="dots-container">
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </section>
+              }
+              {error && <p style={{ color: "red" }}>{error}</p>}
+            </div>
+        }
         </>
     )
 }

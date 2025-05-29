@@ -10,7 +10,7 @@ function SingleCategory(){
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
     const {Category} = useParams();
-    const {addToCart} = useCart();
+    const {addToCart, cart} = useCart();
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -43,13 +43,12 @@ function SingleCategory(){
 
     return(
         <>
+        { !loading && !error ?  
         <div className="con">
             <div className="allProducts">
             <h1>Category : {Category}</h1>
 
-                {loading && <p>Loading products...</p>}
-
-                {error && <p style={{ color: "red" }}>{error}</p>}
+             
             <div className="grid-con">
             {
                  
@@ -84,9 +83,23 @@ function SingleCategory(){
                 
                
            }
+            </div> 
+
             </div>
-            </div>
+        </div> :
+        <div className="preload">
+              {loading && 
+                <section class="dots-container">
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </section>
+              }
+              {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
+        }
         </>
     )
 }
